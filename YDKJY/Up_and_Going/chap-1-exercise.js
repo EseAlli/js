@@ -41,9 +41,12 @@ function calculate_tax (amt) {
   return amt
 }
 
+// keep buying phones while you still have money
 while(total_cost < BANK_BALANCE){
+  // buy a new phone!
   total_cost += PHONE_COST
 
+  //can i afford an accessory
   if (total_cost < SPENDING_THRESHOLD){
     total_cost += ACCESSORY_PRICE
   }
@@ -51,7 +54,7 @@ while(total_cost < BANK_BALANCE){
 
 total_cost = total_cost + calculate_tax(total_cost)
 
-console.log("Your purchase cost" + formatAmount(total_cost))
+console.log("Your purchase cost" + formatAmount(total_cost)) 
 
 if (total_cost < BANK_BALANCE){
   console.log("You can afford this")
